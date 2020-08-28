@@ -43,7 +43,7 @@ class DatasetCatalog(object):
             "icdar2015/test_images",
             # "icdar2015/test_gts",
         ),
-        "synthtext_train": ("synthtext/train_images", "synthtext/train_gts"),
+        "synthtext_train": ("SynthText/SynthText", "SynthText/SynthText_GT_E2E"),
         "synthtext_test": ("synthtext/test_images", "synthtext/test_gts"),
         "total_text_train": ("total_text/train_images", "total_text/train_gts"),
         "td500_train": ("TD_TR/TD500/train_images", "TD500/train_gts"),
@@ -110,7 +110,7 @@ class DatasetCatalog(object):
             attrs = DatasetCatalog.DATASETS[name]
             args = dict(
                 use_charann=True,
-                list_file_path=os.path.join(data_dir, "synthtext/train_list.txt"),
+                list_file_path=os.path.join(data_dir, "SynthText/SynthText_GT_E2E/imglist.txt"),
                 imgs_dir=os.path.join(data_dir, attrs[0]),
                 gts_dir=os.path.join(data_dir, attrs[1]),
                 # imgs_dir='/tmp/synth/SynthText/',
