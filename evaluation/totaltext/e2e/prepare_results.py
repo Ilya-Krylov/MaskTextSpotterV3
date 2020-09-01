@@ -132,7 +132,8 @@ def test_single(results_dir,lexicon_type=3,cache_dir='./cache_dir',score_det=0.5
             line=line.strip()
             lexicon.append(line)
 
-    for res_file in glob.glob("*.txt"):
+    for res_file in glob.glob(f"{results_dir}/*.txt"):
+        res_file = os.path.basename(res_file)
         result_path = os.path.join(results_dir,res_file)
         if os.path.isfile(result_path):
             with open(result_path,'r') as f:
